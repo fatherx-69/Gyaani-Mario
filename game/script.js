@@ -145,3 +145,21 @@ restartBtn.addEventListener('click', () => {
 requestAnimationFrame(movePipe);
 
 document.addEventListener('keydown', jump);
+
+
+// Check if dark mode preference is saved in localStorage
+window.addEventListener('load', function () {
+    if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+    }
+});
+
+// Toggle dark mode
+function toggleDarkMode() {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    if (isDarkMode) {
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        localStorage.setItem('darkMode', 'disabled');
+    }
+}
