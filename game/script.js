@@ -1,26 +1,29 @@
+
 const mario = document.querySelector('.mario');
 const pipe = document.querySelector('.pipe');
 const clouds = document.querySelector('.clouds');
 const gameOver = document.querySelector('.game_over');
+const summaryScreen = document.querySelector('.summary-screen');
+const restartBtn = document.querySelector('#restart-btn');
 
-let currentPosition = -80; // Starting position of pipe (off-screen)
-let speed = 5; // Increased initial speed
+let currentPosition = -80; 
+let speed = 5; 
 const speedIncrement = 0.5;
-const speedIntervalTime = 500; // Reduced to 2 seconds
+const speedIntervalTime = 500; 
 let gameRunning = true;
 
 const jump = () => {
-  mario.classList.add('jump');
+  if (gameRunning) {
+    mario.classList.add('jump');
+    setTimeout(() => {
+      mario.classList.remove('jump');
+    }, 500);
+  }
+};
 
-  setTimeout(() => {
-    mario.classList.remove('jump');
-  }, 500);
-}
-
-// Remove CSS animation and control pipe movement with JavaScript
 pipe.style.animation = 'none';
 
-// Speed increase interval
+
 setInterval(() => {
   if (gameRunning) {
     speed += speedIncrement;
@@ -33,14 +36,14 @@ const movePipe = () => {
   
   currentPosition += speed;
   
-  // Reset pipe position when it goes off screen
+
   if (currentPosition >= window.innerWidth) {
     currentPosition = -80;
   }
   
   pipe.style.right = `${currentPosition}px`;
   requestAnimationFrame(movePipe);
-}
+};
 
 const loop = setInterval(() => {
   const pipePosition = pipe.offsetLeft;
@@ -63,10 +66,19 @@ const loop = setInterval(() => {
     gameOver.textContent = "Game over";
 
     clearInterval(loop);
+
+
+    summaryScreen.style.display = 'block';
   }
 }, 10);
 
-// Start the pipe movement
+
+restartBtn.addEventListener('click', () => {
+  summaryScreen.style.display = 'none';
+  location.reload(); 
+});
+
+
 requestAnimationFrame(movePipe);
 
 document.addEventListener('keydown', jump);
