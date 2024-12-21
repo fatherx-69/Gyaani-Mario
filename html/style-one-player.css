@@ -238,3 +238,69 @@ body {
     color: white;
     border: 3px solid white;
 }
+
+@media screen and (max-width: 750px) {
+    /* Keep the VT323 font */
+    * {
+        font-family: 'VT323', monospace;
+    }
+    
+    /* Remove ground element */
+    .ground {
+        display: none;
+    }
+    
+    /* Make content container take full width */
+    .content {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    /* Adjust title size for smaller screens */
+    .title {
+        font-size: 48px;
+        padding: 15px 30px;
+    }
+    
+    /* Center align menu items and make them stack vertically */
+    .menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+    }
+    
+    /* Adjust menu items for better mobile display */
+    .menu-item {
+        width: 80%;
+        max-width: 300px;
+        margin: 10px 0;
+        padding: 15px 30px;
+        position: relative;
+        font-family: 'VT323', monospace;
+    }
+    
+    /* Adjust selector position for stacked buttons */
+    .selector {
+        left: 20px;
+    }
+    
+    /* Adjust stats position and size */
+    .stats {
+        font-size: 18px;
+        width: 100%;
+        text-align: center;
+        left: 0;
+        top: 60px;
+    }
+    
+    /* Adjust dark mode button position */
+    .dark-mode-button {
+        top: 10px;
+        right: 10px;
+        padding: 8px 16px;
+        font-size: 16px;
+        font-family: 'VT323', monospace;
+    }
+}
