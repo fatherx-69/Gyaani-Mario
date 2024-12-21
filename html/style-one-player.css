@@ -1,5 +1,72 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
+/* ... (keep all existing CSS above unchanged) ... */
+
+/* Add these media queries at the end of your CSS file */
+@media screen and (max-width: 750px) {
+    .title {
+        font-size: 48px;
+        padding: 15px 30px;
+    }
+
+    .stats {
+        font-size: 18px;
+        top: 10px;
+        left: 10px;
+    }
+
+    .menu {
+        margin-top: 40px;
+    }
+
+    .menu-item {
+        padding: 15px 30px;
+        margin: 10px;
+        font-size: 20px;
+        display: block; /* Stack buttons vertically */
+        width: 80%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .selector {
+        left: 10px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .cloud {
+        transform: scale(0.7);
+    }
+
+    .cloud:nth-child(2) {
+        transform: scale(0.6);
+    }
+
+    .cloud:nth-child(3) {
+        transform: scale(0.8);
+    }
+}
+
+/* Additional breakpoint for very small screens */
+@media screen and (max-width: 400px) {
+    .title {
+        font-size: 36px;
+        padding: 10px 20px;
+    }
+
+    .stats {
+        font-size: 16px;
+    }
+
+    .menu-item {
+        padding: 12px 25px;
+        font-size: 18px;
+        width: 90%;
+    }
+}
+
 body {
     margin: 0;
     padding: 0;
