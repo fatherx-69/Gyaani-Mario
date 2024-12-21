@@ -145,17 +145,3 @@ restartBtn.addEventListener('click', () => {
 requestAnimationFrame(movePipe);
 
 document.addEventListener('keydown', jump);
-
-
-const jumpBtn = document.querySelector('#jump-btn');
-
-jumpBtn.addEventListener('touchstart', (e) => {
-  e.preventDefault();  
-  jump();
-});
-
-document.addEventListener('touchstart', (e) => {
-  if (!backgroundMusic.playing) {
-    backgroundMusic.play();
-  }
-});
