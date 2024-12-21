@@ -1,12 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* General styles */
 body {
   margin: 0;
   overflow: hidden;
 }
 
-/* Default styles (game visible) */
 .game-board {
   display: block;
 }
@@ -15,7 +13,6 @@ body {
   display: none;
 }
 
-/* Landscape-only styles for small screens (width below 750px) */
 @media (max-width: 750px) and (orientation: portrait) {
   .game-board {
     display: none;

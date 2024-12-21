@@ -438,7 +438,6 @@
         function showResults() {
             let score = 0;
 
-            // Loop through each question to check selected answers
             for (let i = 1; i <= 10; i++) {
                 const question = document.querySelector(`input[name="q${i}"]:checked`);
                 if (question && question.value === correctAnswers[`q${i}`]) {
@@ -446,7 +445,6 @@
                 }
             }
 
-            // Display the score on the popup
             document.getElementById('score').textContent = `${score}/10`;
             document.getElementById('popup').style.display = 'flex';
         }
@@ -456,7 +454,7 @@
         }
 
         function changeModule() {
-            window.location.href = 'index.html';
+            window.location.href = "../html/one-player.html";
         }
     </script>
 </body>

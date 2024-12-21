@@ -18,8 +18,7 @@
             <div class="map-container">
                 <img src="kimg.jpg" alt="Finance Levels Map" class="map-image">
 
-                <!-- Level Buttons in Ascending Order -->
-    <button class="level" style="--x: 77.9%; --y: 94.3%;" data-info="Introduction to Finance">Level 1</button>
+    <button class="level" style="--x: 77.9%; --y: 94.3%;" data-info="Introduction to Finance" onclick="window.location.href='../game/main-game.html'">Level 1</button>
      <button class="level" style="--x: 86.3%; --y: 82%;" data-info="Personal Budgeting">Level 2</button>
     <button class="level" style="--x: 66.7%; --y: 76.15%;" data-info="Income and Expenses">Level 3</button>
     <button class="level" style="--x: 40%; --y: 74.3%;" data-info="Saving Techniques">Level 4</button>
@@ -37,16 +36,13 @@
 
             </div>
         </div>
-        <div class="ground"></div>
     </div>
 
-    <!-- Audio for Background Music -->
     <audio autoplay loop>
         <source src="sounds/aboveground_bgm.ogg" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
 
-    <!-- Pop-up box -->
     <div id="popup-box" class="popup">Hello Hi</div>
 
     <script src="finance-script.js"></script>
